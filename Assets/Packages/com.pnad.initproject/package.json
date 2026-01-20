@@ -1,0 +1,11 @@
+{
+  "name": "com.pnad.initproject",
+  "version": "1.0.0",
+  "displayName": "Init Project Structure",
+  "description": "Initialize project folder structure and migrate existing folders.",
+  "unity": "2021.3",
+  "author": {
+    "name": "PNAD",
+    "url": "https://github.com/devduc11"
+  }
+}
