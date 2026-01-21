@@ -1,0 +1,11 @@
+{
+  "name": "com.pnad.localization.csv.sync",
+  "version": "1.0.0",
+  "displayName": "Localization CSV Sync",
+  "description": "https://github.com/devduc11/unity-init-project",
+  "unity": "2021.3",
+  "author": {
+    "name": "PNAD",
+    "url": "https://github.com/devduc11"
+  }
+}
