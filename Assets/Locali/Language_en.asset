@@ -1,0 +1,819 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Language_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6c7549d6550334d668497f279c0d8fad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5426761424896
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426786590720
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426790785024
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426790785025
+    m_Localized: Free
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173632
+    m_Localized: Beginner Bundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173633
+    m_Localized: No more annoying ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173634
+    m_Localized: No Ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173635
+    m_Localized: No Ads Pack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173636
+    m_Localized: Pets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173637
+    m_Localized: Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173638
+    m_Localized: Cat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173639
+    m_Localized: Hamster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173640
+    m_Localized: Parrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173641
+    m_Localized: Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173642
+    m_Localized: Ferret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173643
+    m_Localized: Degu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173644
+    m_Localized: Flowers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173645
+    m_Localized: Tulip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173646
+    m_Localized: Rose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173647
+    m_Localized: Sunflower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173648
+    m_Localized: Orchid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173649
+    m_Localized: Insects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173650
+    m_Localized: Animals
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173651
+    m_Localized: Drinks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173652
+    m_Localized: Jewelry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173653
+    m_Localized: Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173654
+    m_Localized: Chess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173655
+    m_Localized: Clothes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173656
+    m_Localized: Bathroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173657
+    m_Localized: Living Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173658
+    m_Localized: Kitchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173659
+    m_Localized: Gardening supplies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173660
+    m_Localized: Technology
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173661
+    m_Localized: Continent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173662
+    m_Localized: Candy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173663
+    m_Localized: Tree grows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173664
+    m_Localized: Picnic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173665
+    m_Localized: Toy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173666
+    m_Localized: Gym
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173667
+    m_Localized: Furniture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173668
+    m_Localized: Bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173669
+    m_Localized: Sofa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173670
+    m_Localized: Chair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173671
+    m_Localized: Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173672
+    m_Localized: Food
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173673
+    m_Localized: Pizza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173674
+    m_Localized: Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173675
+    m_Localized: Fries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173676
+    m_Localized: Hot dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173677
+    m_Localized: Cinema
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173678
+    m_Localized: Western
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173679
+    m_Localized: Horror
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173680
+    m_Localized: Comedy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173681
+    m_Localized: Ticket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173682
+    m_Localized: Drama
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173683
+    m_Localized: Popcorn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173684
+    m_Localized: Landmass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173685
+    m_Localized: Africa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173686
+    m_Localized: Europe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173687
+    m_Localized: Asia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173688
+    m_Localized: Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173689
+    m_Localized: Paper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173690
+    m_Localized: Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173691
+    m_Localized: Cover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173692
+    m_Localized: Calendar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173693
+    m_Localized: Year
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173694
+    m_Localized: Week
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173695
+    m_Localized: Day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173696
+    m_Localized: Month
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173697
+    m_Localized: Fishing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173698
+    m_Localized: Bait
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173699
+    m_Localized: Rod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173700
+    m_Localized: Bobber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173701
+    m_Localized: Museum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173702
+    m_Localized: Exhibit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173703
+    m_Localized: Artifact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173704
+    m_Localized: Hall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173705
+    m_Localized: Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173706
+    m_Localized: Curator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173707
+    m_Localized: Picture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173708
+    m_Localized: Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173709
+    m_Localized: Writer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173710
+    m_Localized: Twain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173711
+    m_Localized: Wilde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173712
+    m_Localized: Tolkien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173713
+    m_Localized: Dickens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173714
+    m_Localized: Orwell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173715
+    m_Localized: Faulkner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173716
+    m_Localized: London
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173717
+    m_Localized: Weather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173718
+    m_Localized: Snowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173719
+    m_Localized: Rainy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173720
+    m_Localized: Windy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173721
+    m_Localized: Sunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173722
+    m_Localized: Foggy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173723
+    m_Localized: Stormy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173724
+    m_Localized: Season
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173725
+    m_Localized: Winter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173726
+    m_Localized: Spring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173727
+    m_Localized: Summer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173728
+    m_Localized: Autumn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173729
+    m_Localized: Fabrics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173730
+    m_Localized: Felt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173731
+    m_Localized: Satin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173732
+    m_Localized: Cotton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173733
+    m_Localized: Silk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173734
+    m_Localized: Velvet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173735
+    m_Localized: Linen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173736
+    m_Localized: Flannel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173737
+    m_Localized: Bird
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173738
+    m_Localized: Beak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173739
+    m_Localized: Wing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173740
+    m_Localized: Tail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173741
+    m_Localized: Molluscs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173742
+    m_Localized: Oyster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173743
+    m_Localized: Clam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173744
+    m_Localized: Snail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173745
+    m_Localized: Slug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173746
+    m_Localized: Dairy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173747
+    m_Localized: Butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173748
+    m_Localized: Yogurt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173749
+    m_Localized: Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173750
+    m_Localized: Dances
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173751
+    m_Localized: Salsa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173752
+    m_Localized: Samba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173753
+    m_Localized: Rumba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173754
+    m_Localized: Waltz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173755
+    m_Localized: Tango
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173756
+    m_Localized: Flamenco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367936
+    m_Localized: Airport
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367937
+    m_Localized: Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367938
+    m_Localized: Terminal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367939
+    m_Localized: Runway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367940
+    m_Localized: Material
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367941
+    m_Localized: Stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367942
+    m_Localized: Metal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367943
+    m_Localized: Plastic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367944
+    m_Localized: Glass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367945
+    m_Localized: Bedtime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367946
+    m_Localized: Yawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367947
+    m_Localized: Lullaby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367948
+    m_Localized: Pajamas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367949
+    m_Localized: Dream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367950
+    m_Localized: Islands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367951
+    m_Localized: Ibiza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367952
+    m_Localized: Iceland
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367953
+    m_Localized: Bali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367954
+    m_Localized: Hawaii
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367955
+    m_Localized: Jamaica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367956
+    m_Localized: Barbados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367957
+    m_Localized: Crete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367958
+    m_Localized: Sicily
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367959
+    m_Localized: Gamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367960
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367961
+    m_Localized: Arcade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367962
+    m_Localized: Strategy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367963
+    m_Localized: Shooter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367964
+    m_Localized: Device
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367965
+    m_Localized: Heater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367966
+    m_Localized: Printer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367967
+    m_Localized: Fax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367968
+    m_Localized: Dryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367969
+    m_Localized: Yoga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367970
+    m_Localized: Meditate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367971
+    m_Localized: Posture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367972
+    m_Localized: Stretch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367973
+    m_Localized: Winter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367974
+    m_Localized: Frost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367975
+    m_Localized: Snowman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367976
+    m_Localized: Cold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367977
+    m_Localized: Snow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367978
+    m_Localized: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367979
+    m_Localized: Ash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367980
+    m_Localized: Ember
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367981
+    m_Localized: Matches
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367982
+    m_Localized: Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367983
+    m_Localized: Flame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367984
+    m_Localized: Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367985
+    m_Localized: Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367986
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367987
+    m_Localized: Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367988
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367989
+    m_Localized: Destrier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367990
+    m_Localized: Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367991
+    m_Localized: Chivalry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367992
+    m_Localized: Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367993
+    m_Localized: Marlin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367994
+    m_Localized: Tuna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367995
+    m_Localized: Goldfish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367996
+    m_Localized: Sardine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367997
+    m_Localized: Perch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367998
+    m_Localized: Eel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367999
+    m_Localized: Mackerel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368000
+    m_Localized: Grouper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368001
+    m_Localized: House
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368002
+    m_Localized: Villa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368003
+    m_Localized: Palace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368004
+    m_Localized: Mansion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6034948087808
+    m_Localized: Test_1
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

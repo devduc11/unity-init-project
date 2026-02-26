@@ -1,0 +1,820 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Language Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Language
+  m_TableCollectionNameGuidString: 6c7549d6550334d668497f279c0d8fad
+  m_Entries:
+  - m_Id: 5426761424896
+    m_Key: Home_PlayBtn_Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426786590720
+    m_Key: Home_PlayBtn_Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426790785024
+    m_Key: InGame_Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426790785025
+    m_Key: Free
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173632
+    m_Key: Beginner_Bundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173633
+    m_Key: No_more_annoying_ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173634
+    m_Key: No_Ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173635
+    m_Key: No_Ads_Pack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173636
+    m_Key: Card_Topic_Pets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173637
+    m_Key: Card_Pets_Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173638
+    m_Key: Card_Pets_Cat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173639
+    m_Key: Card_Pets_Hamster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173640
+    m_Key: Card_Pets_Parrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173641
+    m_Key: Card_Pets_Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173642
+    m_Key: Card_Pets_Ferret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173643
+    m_Key: Card_Pets_Degu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173644
+    m_Key: Card_Topic_Flowers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173645
+    m_Key: Card_Flower_Tulip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173646
+    m_Key: Card_Flower_Rose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173647
+    m_Key: Card_Flower_Sunflower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173648
+    m_Key: Card_Flower_Orchid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173649
+    m_Key: Card_Topic_Insects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173650
+    m_Key: Card_Topic_Animals
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173651
+    m_Key: Card_Topic_Drinks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173652
+    m_Key: Card_Topic_Jewelry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173653
+    m_Key: Card_Topic_Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173654
+    m_Key: Card_Topic_Chess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173655
+    m_Key: Card_Topic_Clothes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173656
+    m_Key: Card_Topic_Bathroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173657
+    m_Key: Card_Topic_Livingroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173658
+    m_Key: Card_Topic_Kitchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173659
+    m_Key: Card_Topic_Gardeningsupplies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173660
+    m_Key: Card_Topic_Technology
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173661
+    m_Key: Card_Topic_Continent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173662
+    m_Key: Card_Topic_Candy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173663
+    m_Key: Card_Topic_Treegrows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173664
+    m_Key: Card_Topic_Picnic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173665
+    m_Key: Card_Topic_Toy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173666
+    m_Key: Card_Topic_Gym
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173667
+    m_Key: Card_Topic_Furniture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173668
+    m_Key: Card_Furniture_Bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173669
+    m_Key: Card_Furniture_Sofa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173670
+    m_Key: Card_Furniture_Chair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173671
+    m_Key: Card_Furniture_Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173672
+    m_Key: Card_Topic_Food
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173673
+    m_Key: Card_Food_Pizza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173674
+    m_Key: Card_Food_Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173675
+    m_Key: Card_Food_Fries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173676
+    m_Key: Card_Food_Hotdog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173677
+    m_Key: Card_Topic_Cinema
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173678
+    m_Key: Card_Cinema_Western
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173679
+    m_Key: Card_Cinema_Horror
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173680
+    m_Key: Card_Cinema_Comedy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173681
+    m_Key: Card_Cinema_Ticket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173682
+    m_Key: Card_Cinema_Drama
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173683
+    m_Key: Card_Cinema_Popcorn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173684
+    m_Key: Card_Topic_Landmass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173685
+    m_Key: Card_Landmass_Africa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173686
+    m_Key: Card_Landmass_Europe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173687
+    m_Key: Card_Landmass_Asia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173688
+    m_Key: Card_Topic_Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173689
+    m_Key: Card_Book_Paper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173690
+    m_Key: Card_Book_Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173691
+    m_Key: Card_Book_Cover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173692
+    m_Key: Card_Topic_Calendar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173693
+    m_Key: Card_Calendar_Year
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173694
+    m_Key: Card_Calendar_Week
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173695
+    m_Key: Card_Calendar_Day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173696
+    m_Key: Card_Calendar_Month
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173697
+    m_Key: Card_Topic_Fishing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173698
+    m_Key: Card_Fishing_Bait
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173699
+    m_Key: Card_Fishing_Rod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173700
+    m_Key: Card_Fishing_Bobber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173701
+    m_Key: Card_Topic_Museum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173702
+    m_Key: Card_Museum_Exhibit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173703
+    m_Key: Card_Museum_Artifact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173704
+    m_Key: Card_Museum_Hall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173705
+    m_Key: Card_Museum_Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173706
+    m_Key: Card_Museum_Curator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173707
+    m_Key: Card_Museum_Picture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173708
+    m_Key: Card_Museum_Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173709
+    m_Key: Card_Topic_Writer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173710
+    m_Key: Card_Writer_Twain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173711
+    m_Key: Card_Writer_Wilde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173712
+    m_Key: Card_Writer_Tolkien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173713
+    m_Key: Card_Writer_Dickens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173714
+    m_Key: Card_Writer_Orwell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173715
+    m_Key: Card_Writer_Faulkner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173716
+    m_Key: Card_Writer_London
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173717
+    m_Key: Card_Topic_Weather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173718
+    m_Key: Card_Weather_Snowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173719
+    m_Key: Card_Weather_Rainy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173720
+    m_Key: Card_Weather_Windy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173721
+    m_Key: Card_Weather_Sunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173722
+    m_Key: Card_Weather_Foggy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173723
+    m_Key: Card_Weather_Stormy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173724
+    m_Key: Card_Topic_Season
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173725
+    m_Key: Card_Season_Winter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173726
+    m_Key: Card_Season_Spring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173727
+    m_Key: Card_Season_Summer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173728
+    m_Key: Card_Season_Autumn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173729
+    m_Key: Card_Topic_Fabrics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173730
+    m_Key: Card_Fabrics_Felt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173731
+    m_Key: Card_Fabrics_Satin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173732
+    m_Key: Card_Fabrics_Cotton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173733
+    m_Key: Card_Fabrics_Silk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173734
+    m_Key: Card_Fabrics_Velvet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173735
+    m_Key: Card_Fabrics_Linen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173736
+    m_Key: Card_Fabrics_Flannel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173737
+    m_Key: Card_Topic_Bird
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173738
+    m_Key: Card_Bird_Beak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173739
+    m_Key: Card_Bird_Wing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173740
+    m_Key: Card_Bird_Tail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173741
+    m_Key: Card_Topic_Molluscs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173742
+    m_Key: Card_Molluscs_Oyster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173743
+    m_Key: Card_Molluscs_Clam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173744
+    m_Key: Card_Molluscs_Snail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173745
+    m_Key: Card_Molluscs_Slug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173746
+    m_Key: Card_Topic_Dairy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173747
+    m_Key: Card_Dairy_Butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173748
+    m_Key: Card_Dairy_Yogurt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173749
+    m_Key: Card_Dairy_Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173750
+    m_Key: Card_Topic_Dances
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173751
+    m_Key: Card_Dances_Salsa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173752
+    m_Key: Card_Dances_Samba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173753
+    m_Key: Card_Dances_Rumba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173754
+    m_Key: Card_Dances_Waltz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173755
+    m_Key: Card_Dances_Tango
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426799173756
+    m_Key: Card_Dances_Flamenco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367936
+    m_Key: Card_Topic_Airport
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367937
+    m_Key: Card_Airport_Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367938
+    m_Key: Card_Airport_Terminal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367939
+    m_Key: Card_Airport_Runway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367940
+    m_Key: Card_Topic_Material
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367941
+    m_Key: Card_Material_Stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367942
+    m_Key: Card_Material_Metal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367943
+    m_Key: Card_Material_Plastic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367944
+    m_Key: Card_Material_Glass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367945
+    m_Key: Card_Topic_Bedtime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367946
+    m_Key: Card_Bedtime_Yawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367947
+    m_Key: Card_Bedtime_Lullaby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367948
+    m_Key: Card_Bedtime_Pajamas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367949
+    m_Key: Card_Bedtime_Dream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367950
+    m_Key: Card_Topic_Islands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367951
+    m_Key: Card_Islands_Ibiza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367952
+    m_Key: Card_Islands_Iceland
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367953
+    m_Key: Card_Islands_Bali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367954
+    m_Key: Card_Islands_Hawaii
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367955
+    m_Key: Card_Islands_Jamaica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367956
+    m_Key: Card_Islands_Barbados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367957
+    m_Key: Card_Islands_Crete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367958
+    m_Key: Card_Islands_Sicily
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367959
+    m_Key: Card_Topic_Gamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367960
+    m_Key: Card_Gamer_Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367961
+    m_Key: Card_Gamer_Arcade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367962
+    m_Key: Card_Gamer_Strategy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367963
+    m_Key: Card_Gamer_Shooter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367964
+    m_Key: Card_Topic_Device
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367965
+    m_Key: Card_Device_Heater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367966
+    m_Key: Card_Device_Printer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367967
+    m_Key: Card_Device_Fax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367968
+    m_Key: Card_Device_Dryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367969
+    m_Key: Card_Topic_Yoga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367970
+    m_Key: Card_Yoga_Meditate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367971
+    m_Key: Card_Yoga_Posture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367972
+    m_Key: Card_Yoga_Stretch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367973
+    m_Key: Card_Topic_Winter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367974
+    m_Key: Card_Winter_Frost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367975
+    m_Key: Card_Winter_Snowman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367976
+    m_Key: Card_Winter_Cold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367977
+    m_Key: Card_Winter_Snow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367978
+    m_Key: Card_Topic_Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367979
+    m_Key: Card_Fire_Ash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367980
+    m_Key: Card_Fire_Ember
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367981
+    m_Key: Card_Fire_Matches
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367982
+    m_Key: Card_Fire_Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367983
+    m_Key: Card_Fire_Flame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367984
+    m_Key: Card_Fire_Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367985
+    m_Key: Card_Topic_Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367986
+    m_Key: Card_Knight_Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367987
+    m_Key: Card_Knight_Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367988
+    m_Key: Card_Knight_Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367989
+    m_Key: Card_Knight_Destrier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367990
+    m_Key: Card_Knight_Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367991
+    m_Key: Card_Knight_Chivalry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367992
+    m_Key: Card_Topic_Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367993
+    m_Key: Card_Fish_Marlin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367994
+    m_Key: Card_Fish_Tuna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367995
+    m_Key: Card_Fish_Goldfish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367996
+    m_Key: Card_Fish_Sardine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367997
+    m_Key: Card_Fish_Perch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367998
+    m_Key: Card_Fish_Eel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803367999
+    m_Key: Card_Fish_Mackerel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368000
+    m_Key: Card_Fish_Grouper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368001
+    m_Key: Card_Topic_House
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368002
+    m_Key: Card_House_Villa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368003
+    m_Key: Card_House_Palace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5426803368004
+    m_Key: Card_House_Mansion
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2149645890249555992
+  references:
+    version: 2
+    RefIds:
+    - rid: 2149645890249555992
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1772115929432
