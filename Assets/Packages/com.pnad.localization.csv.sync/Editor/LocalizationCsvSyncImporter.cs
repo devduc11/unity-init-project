@@ -48,11 +48,15 @@ public class LocalizationCsvSyncImporter : EditorWindow
         }
     }
 
+    // ===================== CORE =====================
+
     private static void SyncCsv(string url, StringTableCollection collection)
     {
+        // Sử dụng UnityWebRequest để tránh lỗi font trên Mac
         var www = UnityWebRequest.Get(url);
         var operation = www.SendWebRequest();
 
+        // Đợi download hoàn tất (Blocking trong Editor)
         while (!operation.isDone) { }
 
         if (www.result != UnityWebRequest.Result.Success)
@@ -61,33 +65,27 @@ public class LocalizationCsvSyncImporter : EditorWindow
             return;
         }
 
+        // 1. Giải mã bằng UTF-8 để giữ đúng dấu Tiếng Việt
         byte[] rawData = www.downloadHandler.data;
         string csvText = Encoding.UTF8.GetString(rawData);
+
+        // 2. XÓA KÝ TỰ BOM (\uFEFF) - Đây là nguyên nhân gây lỗi Header "ey" thay vì "Key"
         csvText = csvText.Trim('\uFEFF', '\u200B');
 
-        // 1. Lấy danh sách Key hiện có trong Unity để so sánh
-        HashSet<string> existingKeys = new HashSet<string>(
-            collection.SharedData.Entries.Select(e => e.Key.Trim().ToUpperInvariant())
-        );
-
-        // 2. Lọc CSV: CHỈ giữ lại những dòng có Key chưa tồn tại
-        // Đảm bảo giữ nguyên toàn bộ nội dung dòng để tránh lỗi MissingField
-        string filteredCsvText = FilterNewKeysOnly(csvText, existingKeys);
-
-        // 3. Lấy toàn bộ Key từ CSV gốc để dùng cho việc xóa (Delete)
+        // 3. Parse keys từ CSV để dùng cho việc xóa dòng thừa
         HashSet<string> csvKeys = ExtractKeysFromCsv(csvText);
 
-        // 4. Import dữ liệu đã lọc (Chỉ thêm mới, không đè)
-        using (StringReader reader = new StringReader(filteredCsvText))
+        // 4. Import dữ liệu vào Collection (Add + Update)
+        // Tham số 'true' xác nhận CSV có Header
+        using (StringReader reader = new StringReader(csvText))
         {
-            // Tham số true xác nhận có Header dòng đầu
             Csv.ImportInto(reader, collection, true, null, false);
         }
 
-        // 5. Xử lý xóa dòng thừa (Nếu Key có trong Unity nhưng không có trên Sheets)
+        // 5. Xử lý DELETE (Xóa những Key không còn tồn tại trên Google Sheets)
         RemoveMissingRows(collection, csvKeys);
 
-        // 6. Lưu Asset
+        // 6. Đánh dấu thay đổi để Unity lưu lại Asset
         EditorUtility.SetDirty(collection.SharedData);
         foreach (var table in collection.StringTables) 
         {
@@ -97,80 +95,64 @@ public class LocalizationCsvSyncImporter : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã thêm Key mới và giữ nguyên các thay đổi cũ!");
+        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã hiển thị đúng Tiếng Việt!");
     }
 
-    // ===================== LOGIC LỌC TRÙNG (FIXED) =====================
-
-    private static string FilterNewKeysOnly(string csvText, HashSet<string> existingKeys)
-    {
-        StringBuilder sb = new StringBuilder();
-        using (StringReader reader = new StringReader(csvText))
-        {
-            string header = reader.ReadLine();
-            if (header != null) sb.AppendLine(header); // Luôn giữ Header
-
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                if (string.IsNullOrWhiteSpace(line)) continue;
-
-                // Lấy Key từ cột đầu tiên (trước dấu phẩy đầu tiên)
-                int firstCommaIndex = line.IndexOf(',');
-                string keyInCsv = "";
-
-                if (firstCommaIndex == -1) 
-                    keyInCsv = line.Trim();
-                else 
-                    keyInCsv = line.Substring(0, firstCommaIndex).Trim();
-
-                keyInCsv = keyInCsv.Trim('\"').ToUpperInvariant();
-
-                // CHỈ thêm dòng này vào danh sách Import nếu Key chưa có trong Unity
-                if (!existingKeys.Contains(keyInCsv))
-                {
-                    sb.AppendLine(line); // Bê nguyên xi cả dòng để không mất cột (index)
-                }
-            }
-        }
-        return sb.ToString();
-    }
+    // ===================== XỬ LÝ CSV =====================
 
     private static HashSet<string> ExtractKeysFromCsv(string csvText)
     {
         HashSet<string> keys = new HashSet<string>();
+
         using (StringReader reader = new StringReader(csvText))
         {
-            reader.ReadLine(); // Bỏ qua Header
-            string line;
+            string line = reader.ReadLine(); // Đọc dòng đầu tiên (Header)
+            
+            // Làm sạch Header để tránh lỗi khi so sánh
+            line = line?.Trim('\uFEFF', '\u200B');
+
             while ((line = reader.ReadLine()) != null)
             {
                 if (string.IsNullOrWhiteSpace(line)) continue;
-                
-                int firstCommaIndex = line.IndexOf(',');
-                string key = (firstCommaIndex == -1) ? line : line.Substring(0, firstCommaIndex);
-                key = key.Trim('\"', ' ').ToUpperInvariant();
-                
-                if (!string.IsNullOrEmpty(key)) keys.Add(key);
+
+                // Làm sạch dòng và lấy cột đầu tiên (Key)
+                string cleanedLine = line.Trim('\uFEFF', '\u200B');
+                string[] cols = cleanedLine.Split(',');
+
+                if (cols.Length > 0)
+                {
+                    string key = cols[0].Trim().ToUpperInvariant();
+                    if (!string.IsNullOrEmpty(key)) keys.Add(key);
+                }
             }
         }
+
         return keys;
     }
 
+    // ===================== XÓA DÒNG THỪA =====================
+
     private static void RemoveMissingRows(StringTableCollection collection, HashSet<string> csvKeys)
     {
+        // Chuyển sang ToList để tránh lỗi "Collection modified" khi đang lặp
         var entries = collection.SharedData.Entries.ToList();
         int count = 0;
+
         foreach (var entry in entries)
         {
             string unityKey = entry.Key.Trim().ToUpperInvariant();
+
             if (!csvKeys.Contains(unityKey))
             {
                 collection.SharedData.RemoveKey(entry.Id);
                 count++;
             }
         }
-        if (count > 0) Debug.Log($"🗑 Đã xóa {count} Key không còn tồn tại trong CSV.");
+
+        if (count > 0)
+        {
+            Debug.Log($"🗑 Đã xóa {count} Key không còn tồn tại trong CSV.");
+        }
     }
 }
 #endif
