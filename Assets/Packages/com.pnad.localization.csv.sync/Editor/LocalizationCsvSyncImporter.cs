@@ -65,27 +65,29 @@ public class LocalizationCsvSyncImporter : EditorWindow
         string csvText = Encoding.UTF8.GetString(rawData);
         csvText = csvText.Trim('\uFEFF', '\u200B');
 
-        // 1. Lấy danh sách Key hiện có trong Unity
+        // 1. Lấy danh sách Key hiện có trong Unity để so sánh
         HashSet<string> existingKeys = new HashSet<string>(
             collection.SharedData.Entries.Select(e => e.Key.Trim().ToUpperInvariant())
         );
 
-        // 2. Lọc CSV: Giữ nguyên cấu trúc dòng, chỉ lọc dựa trên Key
+        // 2. Lọc CSV: CHỈ giữ lại những dòng có Key chưa tồn tại
+        // Đảm bảo giữ nguyên toàn bộ nội dung dòng để tránh lỗi MissingField
         string filteredCsvText = FilterNewKeysOnly(csvText, existingKeys);
 
-        // 3. Lấy tập hợp Key từ CSV gốc để phục vụ hàm Xóa dòng thừa
+        // 3. Lấy toàn bộ Key từ CSV gốc để dùng cho việc xóa (Delete)
         HashSet<string> csvKeys = ExtractKeysFromCsv(csvText);
 
-        // 4. Import vào Unity
+        // 4. Import dữ liệu đã lọc (Chỉ thêm mới, không đè)
         using (StringReader reader = new StringReader(filteredCsvText))
         {
-            // true: Có header, null: dùng mặc định, false: không verbose
+            // Tham số true xác nhận có Header dòng đầu
             Csv.ImportInto(reader, collection, true, null, false);
         }
 
-        // 5. Xử lý xóa dòng thừa (Nếu Key có trong Unity nhưng không có trong CSV)
+        // 5. Xử lý xóa dòng thừa (Nếu Key có trong Unity nhưng không có trên Sheets)
         RemoveMissingRows(collection, csvKeys);
 
+        // 6. Lưu Asset
         EditorUtility.SetDirty(collection.SharedData);
         foreach (var table in collection.StringTables) 
         {
@@ -95,8 +97,10 @@ public class LocalizationCsvSyncImporter : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã bỏ qua các Key trùng khớp.");
+        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã thêm Key mới và giữ nguyên các thay đổi cũ!");
     }
+
+    // ===================== LOGIC LỌC TRÙNG (FIXED) =====================
 
     private static string FilterNewKeysOnly(string csvText, HashSet<string> existingKeys)
     {
@@ -104,29 +108,28 @@ public class LocalizationCsvSyncImporter : EditorWindow
         using (StringReader reader = new StringReader(csvText))
         {
             string header = reader.ReadLine();
-            if (header != null) sb.AppendLine(header); 
+            if (header != null) sb.AppendLine(header); // Luôn giữ Header
 
             string line;
             while ((line = reader.ReadLine()) != null)
             {
                 if (string.IsNullOrWhiteSpace(line)) continue;
 
-                // Lấy Key chính xác hơn bằng cách tìm dấu phẩy đầu tiên
-                // Điều này giúp tránh lỗi Split(',') khi nội dung chứa dấu phẩy trong ngoặc kép
+                // Lấy Key từ cột đầu tiên (trước dấu phẩy đầu tiên)
+                int firstCommaIndex = line.IndexOf(',');
                 string keyInCsv = "";
-                int firstComma = line.IndexOf(',');
-                
-                if (firstComma == -1) 
-                    keyInCsv = line.Trim().ToUpperInvariant(); // Dòng chỉ có mỗi Key
+
+                if (firstCommaIndex == -1) 
+                    keyInCsv = line.Trim();
                 else 
-                    keyInCsv = line.Substring(0, firstComma).Trim().ToUpperInvariant();
+                    keyInCsv = line.Substring(0, firstCommaIndex).Trim();
 
-                // Loại bỏ ký tự đặc biệt nếu có
-                keyInCsv = keyInCsv.Trim('\uFEFF', '\u200B', '\"');
+                keyInCsv = keyInCsv.Trim('\"').ToUpperInvariant();
 
+                // CHỈ thêm dòng này vào danh sách Import nếu Key chưa có trong Unity
                 if (!existingKeys.Contains(keyInCsv))
                 {
-                    sb.AppendLine(line); // Giữ nguyên toàn bộ dòng gốc (đầy đủ các cột)
+                    sb.AppendLine(line); // Bê nguyên xi cả dòng để không mất cột (index)
                 }
             }
         }
@@ -144,9 +147,9 @@ public class LocalizationCsvSyncImporter : EditorWindow
             {
                 if (string.IsNullOrWhiteSpace(line)) continue;
                 
-                int firstComma = line.IndexOf(',');
-                string key = (firstComma == -1) ? line : line.Substring(0, firstComma);
-                key = key.Trim('\uFEFF', '\u200B', '\"', ' ').ToUpperInvariant();
+                int firstCommaIndex = line.IndexOf(',');
+                string key = (firstCommaIndex == -1) ? line : line.Substring(0, firstCommaIndex);
+                key = key.Trim('\"', ' ').ToUpperInvariant();
                 
                 if (!string.IsNullOrEmpty(key)) keys.Add(key);
             }
