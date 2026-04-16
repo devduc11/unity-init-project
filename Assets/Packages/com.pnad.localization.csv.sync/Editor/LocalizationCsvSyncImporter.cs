@@ -72,12 +72,21 @@ public class LocalizationCsvSyncImporter : EditorWindow
         // 2. XÓA KÝ TỰ BOM (\uFEFF) - Đây là nguyên nhân gây lỗi Header "ey" thay vì "Key"
         csvText = csvText.Trim('\uFEFF', '\u200B');
 
+        // --- MỚI: LỌC TRÙNG KEY ---
+        // Lấy danh sách các Key hiện đang có trong Unity để so sánh
+        HashSet<string> existingKeys = new HashSet<string>(
+            collection.SharedData.Entries.Select(e => e.Key.Trim().ToUpperInvariant())
+        );
+
+        // Lọc nội dung CSV: Chỉ giữ lại những dòng có Key CHƯA tồn tại trong Unity
+        string filteredCsvText = FilterNewKeysOnly(csvText, existingKeys);
+        // --------------------------
+
         // 3. Parse keys từ CSV để dùng cho việc xóa dòng thừa
         HashSet<string> csvKeys = ExtractKeysFromCsv(csvText);
 
-        // 4. Import dữ liệu vào Collection (Add + Update)
-        // Tham số 'true' xác nhận CSV có Header
-        using (StringReader reader = new StringReader(csvText))
+        // 4. Import dữ liệu đã lọc vào Collection (Chỉ thêm mới, không ghi đè)
+        using (StringReader reader = new StringReader(filteredCsvText))
         {
             Csv.ImportInto(reader, collection, true, null, false);
         }
@@ -95,7 +104,41 @@ public class LocalizationCsvSyncImporter : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã hiển thị đúng Tiếng Việt!");
+        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã thêm các Key mới và giữ nguyên các Key trùng đã có!");
+    }
+
+    // ===================== HÀM HỖ TRỢ LỌC TRÙNG =====================
+
+    private static string FilterNewKeysOnly(string csvText, HashSet<string> existingKeys)
+    {
+        StringBuilder sb = new StringBuilder();
+        using (StringReader reader = new StringReader(csvText))
+        {
+            string header = reader.ReadLine();
+            if (header != null) sb.AppendLine(header); // Luôn giữ lại dòng tiêu đề (Header)
+
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                // Tách cột để lấy Key (Cột đầu tiên)
+                string cleanedLine = line.Trim('\uFEFF', '\u200B');
+                string[] cols = cleanedLine.Split(',');
+
+                if (cols.Length > 0)
+                {
+                    string keyInCsv = cols[0].Trim().ToUpperInvariant();
+
+                    // Nếu Key này CHƯA có trong Unity thì mới thêm vào danh sách nạp
+                    if (!existingKeys.Contains(keyInCsv))
+                    {
+                        sb.AppendLine(line);
+                    }
+                }
+            }
+        }
+        return sb.ToString();
     }
 
     // ===================== XỬ LÝ CSV =====================
