@@ -52,11 +52,9 @@ public class LocalizationCsvSyncImporter : EditorWindow
 
     private static void SyncCsv(string url, StringTableCollection collection)
     {
-        // Sử dụng UnityWebRequest để tránh lỗi font trên Mac
         var www = UnityWebRequest.Get(url);
         var operation = www.SendWebRequest();
 
-        // Đợi download hoàn tất (Blocking trong Editor)
         while (!operation.isDone) { }
 
         if (www.result != UnityWebRequest.Result.Success)
@@ -65,27 +63,24 @@ public class LocalizationCsvSyncImporter : EditorWindow
             return;
         }
 
-        // 1. Giải mã bằng UTF-8 để giữ đúng dấu Tiếng Việt
         byte[] rawData = www.downloadHandler.data;
         string csvText = Encoding.UTF8.GetString(rawData);
-
-        // 2. XÓA KÝ TỰ BOM (\uFEFF) - Đây là nguyên nhân gây lỗi Header "ey" thay vì "Key"
         csvText = csvText.Trim('\uFEFF', '\u200B');
 
-        // 3. Parse keys từ CSV để dùng cho việc xóa dòng thừa
-        HashSet<string> csvKeys = ExtractKeysFromCsv(csvText);
+        // 1. Lọc các Key duy nhất và loại bỏ trùng lặp từ nội dung CSV gốc
+        string uniqueCsvText = FilterDuplicateKeys(csvText);
+        
+        // 2. Parse keys để dùng cho việc xóa dòng thừa
+        HashSet<string> csvKeys = ExtractKeysFromCsv(uniqueCsvText);
 
-        // 4. Import dữ liệu vào Collection (Add + Update)
-        // Tham số 'true' xác nhận CSV có Header
-        using (StringReader reader = new StringReader(csvText))
+        // 3. Import dữ liệu đã lọc sạch vào Collection
+        using (StringReader reader = new StringReader(uniqueCsvText))
         {
             Csv.ImportInto(reader, collection, true, null, false);
         }
 
-        // 5. Xử lý DELETE (Xóa những Key không còn tồn tại trên Google Sheets)
         RemoveMissingRows(collection, csvKeys);
 
-        // 6. Đánh dấu thay đổi để Unity lưu lại Asset
         EditorUtility.SetDirty(collection.SharedData);
         foreach (var table in collection.StringTables) 
         {
@@ -95,7 +90,48 @@ public class LocalizationCsvSyncImporter : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã hiển thị đúng Tiếng Việt!");
+        Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã loại bỏ trùng lặp và giữ đúng Tiếng Việt!");
+    }
+
+    // ===================== XỬ LÝ TRÙNG LẶP =====================
+
+    private static string FilterDuplicateKeys(string csvText)
+    {
+        StringBuilder sb = new StringBuilder();
+        HashSet<string> processedKeys = new HashSet<string>();
+
+        using (StringReader reader = new StringReader(csvText))
+        {
+            // Giữ lại dòng Header
+            string header = reader.ReadLine();
+            if (header != null) sb.AppendLine(header);
+
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                string cleanedLine = line.Trim('\uFEFF', '\u200B');
+                string[] cols = cleanedLine.Split(',');
+
+                if (cols.Length > 0)
+                {
+                    string key = cols[0].Trim().ToUpperInvariant();
+                    
+                    // Nếu Key chưa xuất hiện, thì mới thêm vào nội dung cuối cùng
+                    if (!processedKeys.Contains(key))
+                    {
+                        processedKeys.Add(key);
+                        sb.AppendLine(line);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"⚠️ Phát hiện trùng Key: [{cols[0]}]. Đã bỏ qua dòng này.");
+                    }
+                }
+            }
+        }
+        return sb.ToString();
     }
 
     // ===================== XỬ LÝ CSV =====================
