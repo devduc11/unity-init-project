@@ -1,0 +1,17 @@
+{
+  "name": "com.pnad.devtools",
+  "displayName": "PNAD DevTools",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Bộ công cụ Editor tích hợp: Khởi tạo dự án, tự động sinh Script mẫu (UIManager, LoadingUI) và các Editor Tools hỗ trợ quy trình làm game.",
+  "keywords": [
+    "editor",
+    "tools",
+    "devtools",
+    "project-init",
+    "utility"
+  ],
+  "author": {
+    "name": "PNAD"
+  }
+}
