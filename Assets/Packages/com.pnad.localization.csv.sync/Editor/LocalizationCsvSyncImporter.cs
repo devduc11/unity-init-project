@@ -81,6 +81,7 @@ public class LocalizationCsvSyncImporter : EditorWindow
 
         RemoveMissingRows(collection, csvKeys);
 
+        EditorUtility.SetDirty(collection);
         EditorUtility.SetDirty(collection.SharedData);
         foreach (var table in collection.StringTables) 
         {
@@ -93,7 +94,26 @@ public class LocalizationCsvSyncImporter : EditorWindow
         Debug.Log($"✅ SYNC HOÀN TẤT: {collection.name}. Đã loại bỏ trùng lặp và giữ đúng Tiếng Việt!");
     }
 
-    // ===================== XỬ LÝ TRÙNG LẶP =====================
+    // ===================== XỬ LÝ TRÙNG LẶP & TRÍCH XUẤT KEY =====================
+
+    private static string ExtractKeyFromLine(string line)
+    {
+        if (string.IsNullOrWhiteSpace(line)) return null;
+        string cleanedLine = line.Trim('\uFEFF', '\u200B');
+
+        string[] cols = cleanedLine.Split(',');
+        if (cols.Length > 0)
+        {
+            string rawKey = cols[0].Trim();
+            // Loại bỏ dấu ngoặc kép bao quanh Key nếu có (ví dụ "KEY_NAME" -> KEY_NAME)
+            if (rawKey.StartsWith("\"") && rawKey.EndsWith("\"") && rawKey.Length >= 2)
+            {
+                rawKey = rawKey.Substring(1, rawKey.Length - 2).Trim();
+            }
+            return rawKey;
+        }
+        return null;
+    }
 
     private static string FilterDuplicateKeys(string csvText)
     {
@@ -109,24 +129,20 @@ public class LocalizationCsvSyncImporter : EditorWindow
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                if (string.IsNullOrWhiteSpace(line)) continue;
+                string key = ExtractKeyFromLine(line);
 
-                string cleanedLine = line.Trim('\uFEFF', '\u200B');
-                string[] cols = cleanedLine.Split(',');
-
-                if (cols.Length > 0)
+                if (!string.IsNullOrEmpty(key))
                 {
-                    string key = cols[0].Trim().ToUpperInvariant();
-                    
-                    // Nếu Key chưa xuất hiện, thì mới thêm vào nội dung cuối cùng
-                    if (!processedKeys.Contains(key))
+                    string keyUpper = key.ToUpperInvariant();
+
+                    if (!processedKeys.Contains(keyUpper))
                     {
-                        processedKeys.Add(key);
+                        processedKeys.Add(keyUpper);
                         sb.AppendLine(line);
                     }
                     else
                     {
-                        Debug.LogWarning($"⚠️ Phát hiện trùng Key: [{cols[0]}]. Đã bỏ qua dòng này.");
+                        Debug.LogWarning($"⚠️ Phát hiện trùng Key: [{key}]. Đã bỏ qua dòng này.");
                     }
                 }
             }
@@ -142,23 +158,15 @@ public class LocalizationCsvSyncImporter : EditorWindow
 
         using (StringReader reader = new StringReader(csvText))
         {
-            string line = reader.ReadLine(); // Đọc dòng đầu tiên (Header)
-            
-            // Làm sạch Header để tránh lỗi khi so sánh
-            line = line?.Trim('\uFEFF', '\u200B');
+            string header = reader.ReadLine(); // Đọc dòng đầu tiên (Header)
 
+            string line;
             while ((line = reader.ReadLine()) != null)
             {
-                if (string.IsNullOrWhiteSpace(line)) continue;
-
-                // Làm sạch dòng và lấy cột đầu tiên (Key)
-                string cleanedLine = line.Trim('\uFEFF', '\u200B');
-                string[] cols = cleanedLine.Split(',');
-
-                if (cols.Length > 0)
+                string key = ExtractKeyFromLine(line);
+                if (!string.IsNullOrEmpty(key))
                 {
-                    string key = cols[0].Trim().ToUpperInvariant();
-                    if (!string.IsNullOrEmpty(key)) keys.Add(key);
+                    keys.Add(key.ToUpperInvariant());
                 }
             }
         }
@@ -176,11 +184,14 @@ public class LocalizationCsvSyncImporter : EditorWindow
 
         foreach (var entry in entries)
         {
+            if (string.IsNullOrEmpty(entry.Key)) continue;
+
             string unityKey = entry.Key.Trim().ToUpperInvariant();
 
             if (!csvKeys.Contains(unityKey))
             {
-                collection.SharedData.RemoveKey(entry.Id);
+                // Gọi collection.RemoveEntry(entry.Id) để xóa đồng bộ cả ở SharedData và các StringTable ngôn ngữ
+                collection.RemoveEntry(entry.Id);
                 count++;
             }
         }
